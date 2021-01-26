@@ -9,82 +9,57 @@ html {
 }
 
 html {
+  background: url(images/bg-mobile.svg) no-repeat top;
+  background-size: contain;
   background-color: #674baf;
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
-}
-
-.background-desktop {
-  background: url(images/bg-desktop.svg) no-repeat;
-  background-size: contain;
-  position: fixed;
-  width: 100%;
-  height: 100%;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   color: white;
-  margin: 0;
-  padding: 0;
-  font-size: 2.5vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  padding: 5%;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 100%));
+.logo{
+  max-width: 50%;
+  margin-right: auto;
+}
+
+.illustration{
+  margin: 13% 0 10% 0;
+}
+
+.verbiage{
   text-align: center;
-  max-height: 100%;
-  padding: 5% 5% 0;
-  margin: 0;
 }
-
-.logo >img{
-  object-fit: cover;
-  width: 30%;
-  max-width: 100%;
-  height: auto;
-}
-
-
-.illustration >img {
-  object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
-  margin-top: 5%;
-}
-
-
-.verbiage {
-  padding-left: 3%;
-  padding-right: 22%;
-  margin-top: 3%;
-  margin-left: 3%;
-}
-
 .verbiage h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: .8em;
-  margin-right: 20%;
-  text-align: left;
+  font-size: 1.8em;
 }
 
 .verbiage p {
   font-family: 'Open Sans', sans-serif;
-  font-size: .4em;
-  text-align: left;
+  font-size: 1.1em;
+  padding: 0 1% 5%;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 button {
   border: none;
   border-radius: 32px;
-  color: #674baf;
+  color: hsla(257, 40%, 49%, 70%);
   font-size: .8em;
   font-weight: 400;
   background-color: white;
-  padding: 2.2% 8%;
+  padding: .8rem 5rem;
   box-shadow: 1px 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -98,51 +73,41 @@ button:focus{
 }
 
 .attribution {
-  font-size: .3em;
-  display: inline-block;
-  text-align: center;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: 1%;
+  font-size: .8em;
 }
 
 .attribution a {
   color: white;
 }
 
-.social {
+.social{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 0;
+  flex-flow: row nowrap;
 }
-
 .icon-facebook {
-  color: #fff;
-  font-size: .5em;
-  border: .1em solid white;
-  padding: 5px 8px 5px 9px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  border: .1em solid rgba(255, 255, 255, 0.8);;
+  padding: 5px 10px 5px 10px;
   border-radius: 50%;
   text-decoration: none;
-  margin-right: 8px;
+  margin-right: 2%;
 }
 
 .icon-twitter {
-  color: #fff;
-  font-size: .5em;
-  border: .1em solid white;
-  padding: 5px 2px 5px 7px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  border: .1em solid rgba(255, 255, 255, 0.8);;
+  padding: 5px 5px 5px 7px;
   border-radius: 50%;
   text-decoration: none;
-  margin-right: 8px;
+  margin-right: 2%;
 }
 
 .icon-instagram {
-  color: #fff;
-  font-size: .5em;
-  border: .1em solid white;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  border: .1em solid rgba(255, 255, 255, 0.8);;
   padding: 5px 8px;
   border-radius: 50%;
   text-decoration: none;
@@ -155,54 +120,64 @@ button:focus{
   cursor: pointer;
 }
 
-@media only screen and (max-width: 376px) {
-  .background-desktop {
-    background: url(images/bg-mobile.svg) no-repeat center top;
-    position: fixed;
-  }
-
-  .grid-container{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin: 5%;
+@media only screen and (min-width: 900px) {
+  html{
+    background: url(images/bg-desktop.svg) no-repeat;
+    background-size: cover;
+    background-color: #674baf;
+    margin: 0;
     padding: 0;
+    max-width: 100%;
   }
 
-  .logo {
-    margin: none;
-    margin-top: 1%;
-    padding: none;
+  body {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: repeat(4, auto);
+    align-items: flex-start;
+    font-size: 1rem;
+    padding: 0;
+    margin:0;
+    transform: translate(8%,9%);
   }
 
+   .logo{
+    max-width: 15%;
+    grid-column: 1/3;
+
+   }
+
+.illustration{
+  margin: 14% 0 0 0;
+  transform: translate(1%,-2%);
+}
 .verbiage{
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding:0;
-  margin-top: 15%;
+  margin: 15% 0 0 10%;
+  text-align: left;
+  padding-right: 10%;
+
 }
   .verbiage h2{
-    font-size: 1.5rem;
-    margin:0 5%;
-    text-align: center;
+    font-size: 2em;
+    padding: 0;
+    margin:0;
+    margin-right: 30%;
   }
   .verbiage p{
-    font-size: 1.2rem;
-    text-align: center;
+    padding:0;
+    padding-right: 10%;
+    line-height: 1.5;
   }
-  button {
-    padding: 1rem 5rem;
-    font-size: .8rem;
+  button{
+    padding: 2.5% 11%;
   }
   .social{
-    font-size: 2rem;
-    display: inline-block;
-    width: 100vw;
-    text-align: center;
-    margin-bottom: 4%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    grid-column: 2 / 3;
   }
-  .attribution{
-    font-size: .5rem;
-  }
+
+footer{
+  grid-column: 1 / 3;
 }
